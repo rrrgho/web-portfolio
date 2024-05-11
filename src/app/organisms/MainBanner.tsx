@@ -6,13 +6,14 @@ import { TypeAnimation } from "react-type-animation";
 import RianGhoImage from "../assets/images/rian-gho-banner.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 const MainBanner = () => {
   return (
     <main>
       <div className="h-screen overflow-hidden">
         <div className="w-full bg-transparent md:h-full z-30 justify-start pl-6 mt-[200px] md:mt-0 md:pl-0 md:justify-center md:content-center md:item-center absolute top-0">
-          <div className="mt-0 container flex flex-col">
+          <div className="mt-0 container flex flex-col md:pl-[200px]">
             <span className="text-base md:text-2xl font-mainLight p-0">
               Hello there ...
             </span>
@@ -35,9 +36,11 @@ const MainBanner = () => {
               />
             </span>
             <div className="flex flex-row mt-4">
-              <Button className="px-8 bg-primary text-white font-cairoSemiBold tracking-wide">
-                My Work
-              </Button>
+              <Link passHref legacyBehavior href="/showcase/my-work">
+                <Button className="px-8 bg-primary text-white font-cairoSemiBold tracking-wide">
+                  My Work
+                </Button>
+              </Link>
               <Button className="px-8 bg-primary border-solid border-[1px] border-primary ms-4 bg-white text-primary tracking-[.10em] hover:text-primary hover:bg-white hover:font-bold">
                 Hire Me
               </Button>

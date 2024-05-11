@@ -1,23 +1,24 @@
 import PortfolioLayout from "@/app/components/PortfolioLayout";
 import PostCardThumbnail from "@/app/components/PostCardThumbnail";
-import React, { FC } from "react";
+import { FC } from "react";
 import DetikcomThumbnail from "../../assets/images/detikcom.png";
 import GicThumbnail from "../../assets/images/gic.png";
 import TelkomselThumbnail from "../../assets/images/telkomsel.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import UpThumbnail from "../../assets/images/up.png";
+import PlnThumbnail from "../../assets/images/pln.png";
 
 // Import Icons
+import Image from "next/image";
+import ReactIcon from "../../assets/icons/React-icon.png";
+import BlockChainIcon from "../../assets/icons/blockchain-icon.png";
+import DjangoIcon from "../../assets/icons/django-icon.svg";
 import GraphQlIcon from "../../assets/icons/graphql-icon.png";
 import MaterialUiIcon from "../../assets/icons/materialui-icon.png";
 import NextJsIcon from "../../assets/icons/nextjs-icon.png";
-import ReactIcon from "../../assets/icons/React-icon.png";
+import PancakeSwapIcon from "../../assets/icons/pancakeswap-icon.png";
 import ShadcnIcon from "../../assets/icons/shadcn-icon.png";
 import TailwindIcon from "../../assets/icons/tailwind-icon.jpeg";
-import DjangoIcon from "../../assets/icons/django-icon.svg";
-import BlockChainIcon from "../../assets/icons/blockchain-icon.png";
-import PancakeSwapIcon from "../../assets/icons/pancakeswap-icon.png";
-import Image from "next/image";
+import LaravelIcon from "../../assets/icons/laravel-icon.png";
 
 const MyWork: FC = () => {
   return (
@@ -254,6 +255,171 @@ const MyWork: FC = () => {
                 src={TailwindIcon}
                 className="w-[25px] h-[20px] md:w-[30px] md:h-[25px] mr-2"
               />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* SECTION GREETING OF PERSONAL PROJECT */}
+      <div className="py-10 md:py-0 w-full h-auto bg-primary">
+        <div className="container py-10">
+          <div className="w-full md:w-3/5">
+            <span className="text-white font-cairoBold text-3xl md:text-5xl">
+              Do those works above impress you?
+            </span>{" "}
+            <br />
+            <span className="text-white font-cairoRegular tracking-wide text-2xl">
+              {`That's`} just a begining, {`I'll`} show you below my personal
+              project
+            </span>
+            <p className="mt-4 text-white font-mainLight">
+              I work on my personal project only with my beautiful hands, start
+              from the Backend side, Frontend side and even Deployment or Data
+              migration.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* SECTION WORKING EXPERIENCE UNITED PLANTATION */}
+      <div className="py-10 md:py-0 w-full h-auto bg-white">
+        <div className="container md:flex p-0">
+          <div className="w-full md:w-1/2 h-auto justify-center content-center">
+            <div className="">
+              <PostCardThumbnail image={UpThumbnail} />
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 md:py-[200px] px-10">
+            <div className="bg-transparent relative">
+              <span className="font-cairoBold text-lg">Fullstack Engineer</span>{" "}
+              <br />
+              <span className="font-cairoBold text-3xl md:text-5xl">
+                Palm Tree Research & Development App
+              </span>
+              <div className="absolute bottom-[-10px] md:bottom-[-20px] bg-primary h-[10px] md:h-[15px] rounded-full overflow-hidden">
+                <span className="font-cairoBold text-3xl md:text-5xl text-primary">
+                  Palm Tree
+                </span>
+              </div>
+            </div>
+            <div className="relative mt-5 md:mt-10">
+              <div className="text-justify md:text-start">
+                <p>
+                  This app is used for managing Palm Tree Research, which it
+                  will record all Palm Tree process untill Palm Seed Production
+                </p>
+                <p className="mt-4">
+                  I use Laravel for the Backend side to make it easier to
+                  maintanance and fast in development, with Postgresql database.
+                </p>
+                <p className="mt-4">
+                  For the Frontend side, of course I use React Native which it
+                  required Cross-Platform app, and React JS for the website
+                </p>
+              </div>
+            </div>
+
+            <div className="relative mt-4">
+              <span className="font-mainRegular text-[10px]">
+                Used Technologies :{" "}
+              </span>
+            </div>
+            <div className="relative flex flex-row mt-4">
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={LaravelIcon}
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] mr-2"
+              />
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={NextJsIcon}
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] mr-2"
+              />
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={ReactIcon}
+                className="w-[25px] h-[20px] md:w-[30px] md:h-[25px] mr-2"
+              />
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={ShadcnIcon}
+                className="w-[25px] h-[20px] md:w-[30px] md:h-[25px] mr-2"
+              />
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={TailwindIcon}
+                className="w-[25px] h-[20px] md:w-[30px] md:h-[25px] mr-2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* SECTION WORKING EXPERIENCE PLN INDONESIA POWER */}
+      <div className="py-10 md:py-0 w-full h-auto bg-[#f4f4f4]">
+        <div className="container flex flex-col-reverse md:flex-row p-0">
+          <div className="w-full md:w-1/2 md:py-[200px] px-10">
+            <div className="bg-transparent relative">
+              <span className="font-cairoBold text-lg">Fullstack Engineer</span>{" "}
+              <br />
+              <span className="font-cairoBold text-3xl md:text-5xl">
+                PLN Working Permit App
+              </span>
+              <div className="absolute bottom-[-10px] md:bottom-[-20px] bg-primary h-[10px] md:h-[15px] rounded-full overflow-hidden">
+                <span className="font-cairoBold text-3xl md:text-5xl text-primary">
+                  Detikcom
+                </span>
+              </div>
+            </div>
+            <div className="relative mt-5 md:mt-10">
+              <div className="text-justify md:text-start">
+                <p>
+                  PLN is the biggest power provider company of Indonesia, they
+                  only one Power provider in Indonesia.
+                </p>
+                <p className="mt-4">
+                  I built the Working Permit App for their company, which to
+                  validate every workers or vendors who work in PLN Indonesia
+                </p>
+                <p className="mt-4">
+                  As usual, I use React Native and PHP Laravel to execute this
+                  Web and App
+                </p>
+              </div>
+            </div>
+
+            <div className="relative mt-4">
+              <span className="font-mainRegular text-[10px]">
+                Used Technologies :{" "}
+              </span>
+            </div>
+            <div className="relative flex flex-row mt-4">
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={LaravelIcon}
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] mr-2"
+              />
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={GraphQlIcon}
+                className="w-[25px] h-[20px] md:w-[25px] md:h-[25px] mr-2"
+              />
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={NextJsIcon}
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] mr-2"
+              />
+              <Image
+                alt="Programming Tools and Framework Icon"
+                src={ReactIcon}
+                className="w-[25px] h-[20px] md:w-[30px] md:h-[25px] mr-2"
+              />
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 h-auto justify-center content-center">
+            <div className="">
+              <PostCardThumbnail image={PlnThumbnail} />
             </div>
           </div>
         </div>
