@@ -8,7 +8,11 @@ const DownloadThisWebsite = () => {
       I built this website with
       <FontAwesomeIcon icon={faHeart} className="text-pink-500 mx-2" />
       Get it on my{" "}
-      <a href="" className="text-blue-500">
+      <a
+        href="https://github.com/rrrgho/igho-web-portfolio"
+        className="text-blue-500"
+        target="_blank"
+      >
         GitHub
       </a>
     </span>
