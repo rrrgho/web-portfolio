@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import RianGhoImage from "../assets/images/rian-gho-banner.jpg";
+import RianGhoImage from "@/app/assets/images/rian-gho-banner.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";

@@ -1,8 +1,5 @@
+import DevelopingEngineerImage from "@/app/assets/images/developing-engineer.jpg";
 import Image from "next/image";
-import React from "react";
-import DevelopingEngineerImage from "../assets/images/developing-engineer.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import DownloadThisWebsite from "../components/DownloadThisWeb";
 
 const SectionUnderConstraction = () => {

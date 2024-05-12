@@ -1,24 +1,24 @@
 import PortfolioLayout from "@/app/components/PortfolioLayout";
 import PostCardThumbnail from "@/app/components/PostCardThumbnail";
 import { FC } from "react";
-import DetikcomThumbnail from "../../assets/images/detikcom.png";
-import GicThumbnail from "../../assets/images/gic.png";
-import TelkomselThumbnail from "../../assets/images/telkomsel.png";
-import UpThumbnail from "../../assets/images/up.png";
-import PlnThumbnail from "../../assets/images/pln.png";
+import DetikcomThumbnail from "@/app/assets/images/detikcom.png";
+import GicThumbnail from "@/app/assets/images/gic.png";
+import TelkomselThumbnail from "@/app/assets/images/telkomsel.png";
+import UpThumbnail from "@/app/assets/images/up.png";
+import PlnThumbnail from "@/app/assets/images/pln.png";
 
 // Import Icons
 import Image from "next/image";
-import ReactIcon from "../../assets/icons/React-icon.png";
-import BlockChainIcon from "../../assets/icons/blockchain-icon.png";
-import DjangoIcon from "../../assets/icons/django-icon.svg";
-import GraphQlIcon from "../../assets/icons/graphql-icon.png";
-import MaterialUiIcon from "../../assets/icons/materialui-icon.png";
-import NextJsIcon from "../../assets/icons/nextjs-icon.png";
-import PancakeSwapIcon from "../../assets/icons/pancakeswap-icon.png";
-import ShadcnIcon from "../../assets/icons/shadcn-icon.png";
-import TailwindIcon from "../../assets/icons/tailwind-icon.jpeg";
-import LaravelIcon from "../../assets/icons/laravel-icon.png";
+import ReactIcon from "@/app/assets/icons/React-icon.png";
+import BlockChainIcon from "@/app/assets/icons/blockchain-icon.png";
+import DjangoIcon from "@/app/assets/icons/django-icon.svg";
+import GraphQlIcon from "@/app/assets/icons/graphql-icon.png";
+import MaterialUiIcon from "@/app/assets/icons/materialui-icon.png";
+import NextJsIcon from "@/app/assets/icons/nextjs-icon.png";
+import PancakeSwapIcon from "@/app/assets/icons/pancakeswap-icon.png";
+import ShadcnIcon from "@/app/assets/icons/shadcn-icon.png";
+import TailwindIcon from "@/app/assets/icons/tailwind-icon.jpeg";
+import LaravelIcon from "@/app/assets/icons/laravel-icon.png";
 
 const MyWork: FC = () => {
   return (
