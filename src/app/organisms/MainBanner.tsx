@@ -7,6 +7,7 @@ import RianGhoImage from "../assets/images/rian-gho-banner.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import DownloadThisWebsite from "../components/DownloadThisWeb";
 
 const MainBanner = () => {
   return (
@@ -41,9 +42,11 @@ const MainBanner = () => {
                   My Work
                 </Button>
               </Link>
-              <Button className="px-8 bg-primary border-solid border-[1px] border-primary ms-4 bg-white text-primary tracking-[.10em] hover:text-primary hover:bg-white hover:font-bold">
-                Hire Me
-              </Button>
+              <Link passHref legacyBehavior href="/hire-me">
+                <Button className="px-8 bg-primary border-solid border-[1px] border-primary ms-4 bg-white text-primary tracking-[.10em] hover:text-primary hover:bg-white hover:font-bold">
+                  Hire Me
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -67,14 +70,7 @@ const MainBanner = () => {
 
         <div className="w-full hidden md:block z-50 h-10 flex justify-start content-start items-center absolute bottom-0 bg-transparent">
           <div className="container mx-auto flex flex-row">
-            <span className="font-mainLight">
-              I built this website with
-              <FontAwesomeIcon icon={faHeart} className="text-pink-500 mx-2" />
-              Get it on my{" "}
-              <a href="" className="text-blue-500">
-                GitHub
-              </a>
-            </span>
+            <DownloadThisWebsite />
           </div>
         </div>
       </div>

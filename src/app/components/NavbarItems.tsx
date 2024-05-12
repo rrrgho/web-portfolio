@@ -23,17 +23,17 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "My Works",
     href: "/showcase/my-work",
-    description: "Web I built using Next JS",
+    description: "See what I've done",
   },
   {
     title: "My Achievements",
-    href: "/docs/primitives/hover-card",
-    description: "Javascript Library I love the most",
+    href: "/showcase/my-achievement",
+    description: "Achievements of my Career Journey",
   },
   {
     title: "My Skills",
-    href: "/docs/primitives/alert-dialog",
-    description: "Projects I have completed using React Native",
+    href: "/showcase/my-skill",
+    description: "I can use any technologies :) ",
   },
 ];
 
@@ -42,7 +42,6 @@ const activeMenuClass = "text-primary font-bold";
 const NavbarItems: React.FC = () => {
   const pathname = usePathname();
   const splitedPathname = pathname.split("/");
-  console.log(splitedPathname);
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -59,8 +58,13 @@ const NavbarItems: React.FC = () => {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/blog" legacyBehavior passHref>
+            <NavigationMenuLink
+              className={
+                navigationMenuTriggerStyle() +
+                ` ${pathname === "/blog" && activeMenuClass}`
+              }
+            >
               Blog
             </NavigationMenuLink>
           </Link>

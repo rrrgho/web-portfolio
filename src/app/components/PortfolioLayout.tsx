@@ -9,7 +9,7 @@ interface IPortfolioLayout {
 const PortfolioLayout: FC<IPortfolioLayout> = ({ children }) => {
   return (
     <main>
-      <div className="bg-white h-auto relative">
+      <div className="w-screen overflow-hidden h-auto relative">
         <Navbar />
         {children}
       </div>
