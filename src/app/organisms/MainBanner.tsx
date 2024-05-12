@@ -24,12 +24,7 @@ const MainBanner = () => {
             <span className="text-base md:text-2xl font-mainSemiBold md:mt-[-10px] p-0">
               Passionate
               <TypeAnimation
-                sequence={[
-                  "Software Engineer",
-                  1000,
-                  "IT Project Manager",
-                  1000,
-                ]}
+                sequence={["Software Engineer", 1000]}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
