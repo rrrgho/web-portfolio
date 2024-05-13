@@ -4,6 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
+
+import ReactIcon from "@/app/assets/icons/React-icon.png";
 
 const HireMe = () => {
   return (
@@ -12,35 +15,37 @@ const HireMe = () => {
         <div className="w-full md:w-5/6">
           <Card>
             <CardContent>
-              <div className="w-full flex flex-row mt-3 md:mt-0 justify-between md:justify-end md:text-end md:p-4 md:content-end md:items-end">
-                <Button className="px-8 bg-primary text-white font-cairoSemiBold tracking-wide">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  <span className="ml-2">Email me</span>
-                </Button>
+              <div className="w-full rounded-lg bg-amber-100 flex flex-row mt-3 p-2 justify-between md:justify-end md:text-end md:p-4 md:content-end md:items-end">
+                <a href="mailto:rianiregho@gmail.com">
+                  <Button className="md:px-8 bg-primary text-white font-cairoSemiBold tracking-wide">
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <span className="ml-2">Email me</span>
+                  </Button>
+                </a>
                 <a href="/rian-gho-software-engineer-cv.pdf">
-                  <Button className="px-8 bg-primary border-solid border-[1px] border-primary md:ms-4 bg-white text-primary tracking-[.10em] hover:text-primary hover:bg-white hover:font-bold">
+                  <Button className="md:px-8 bg-primary border-solid border-[1px] border-primary md:ms-4 bg-white text-primary tracking-[.10em] hover:text-primary hover:bg-white hover:font-bold">
                     <FontAwesomeIcon icon={faDownload} />
                     <span className="ml-2">Download</span>
                   </Button>
                 </a>
               </div>
-              <div className="w-full flex flex-row py-10 justify-between">
-                <div className="w-full border-solid  border-b-2 border-primary pb-10 ">
+              <div className="w-full p-2 flex flex-row py-6 md:py-10 justify-between">
+                <div className="w-full border-solid border-b-2 border-primary pb-5 md:pb-10 ">
                   <div>
-                    <span className="font-mainBold text-primary text-4xl md:text-6xl tracking-wide md:tracking-[.20em]">
+                    <span className="font-cairoBold text-primary text-4xl md:text-6xl tracking-wide md:tracking-[.20em]">
                       Rian Gho
                     </span>
                   </div>
                   <div>
-                    <span className="font-mainRegular text-zinc-800 text-1xl md:text-3xl">
+                    <span className="font-cairoRegular text-zinc-800 text-1xl md:text-3xl">
                       Software Engineer
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="w-full">
-                <span>
+              <div className="w-full p-2">
+                <span className="text-sm md:text-base">
                   I am passionated about programming, dedicated and innovative
                   software engineer with 5 years of experience, in developing
                   and designing high quality software applications. And also
@@ -48,11 +53,11 @@ const HireMe = () => {
                 </span>
               </div>
 
-              <div className="w-full flex flex-wrap py-5 justify-between">
+              <div className="w-full p-2 flex flex-wrap py-5 justify-between">
                 <div className="w-full md:w-1/2">
                   <div className="w-full">
                     <div>
-                      <span className="font-mainRegular font-bold md:text-3xl">
+                      <span className="font-mainRegular text-primary text-lg font-bold md:text-3xl">
                         Experiences
                       </span>
                     </div>
@@ -70,7 +75,7 @@ const HireMe = () => {
                         <br />
                       </div>
                       <div className="mt-2 text-justify">
-                        <p className="text-[15px]">
+                        <p className="text-[13px] md:text-[15px]">
                           Telkomsel is biggest Telecommunication and Internet
                           provider in Indonesia, I am associated as Lead
                           Software Engineer with focus in Frontend, The lists of
@@ -117,7 +122,7 @@ const HireMe = () => {
                         <br />
                       </div>
                       <div className="mt-2 text-justify">
-                        <p className="text-[15px]">
+                        <p className="text-[13px] md:text-[15px]">
                           Transmedia is one of online Media and Television
                           company in Indonesia, I work as Senior Software
                           Engineer who handle Backend and Frontend, but mostly I
@@ -157,7 +162,7 @@ const HireMe = () => {
                         <br />
                       </div>
                       <div className="mt-2 text-justify">
-                        <p className="text-[15px]">
+                        <p className="text-[13px] md:text-[15px]">
                           GIC Trade is online Forex and Cryptocurrency tradding
                           company, which run with Blockchain Technology, I was
                           associated as Backend Engineer at the First Year and
@@ -193,13 +198,13 @@ const HireMe = () => {
                 <div className="w-full md:w-1/2 mt-5 md:mt-0">
                   <div className="w-full md:pl-5">
                     <div>
-                      <span className="font-mainRegular font-bold md:text-3xl">
+                      <span className="font-mainRegular text-primary text-lg  font-bold md:text-3xl">
                         Education
                       </span>
                     </div>
                     <main>
                       <div className="mt-4">
-                        <span className="font-mainRegular text-2xl">
+                        <span className="font-mainRegular text-lg md:text-2xl">
                           Information Technology
                         </span>{" "}
                         <br />
@@ -213,7 +218,7 @@ const HireMe = () => {
                         <br />
                       </div>
                       <div className="mt-2 text-justify">
-                        <p className="text-[15px]">
+                        <p className="text-[13px] md:text-[15px]">
                           Getting college of Information Technology enabled my
                           self into my passion, it is programming, almost 4
                           years in university and learn many things about
@@ -226,7 +231,7 @@ const HireMe = () => {
 
                   <div className="w-full md:pl-5 mt-5">
                     <div>
-                      <span className="font-mainRegular font-bold md:text-3xl">
+                      <span className="font-mainRegular text-primary text-lg  font-bold md:text-3xl">
                         Skills
                       </span>
                     </div>
@@ -239,8 +244,10 @@ const HireMe = () => {
                           is the most often used technology of me :
                         </p>
                       </div>
-                      <div className="flex flex-wrap justify-between mt-4">
-                        <div className="w-1/4 m-2">React JS</div>
+                      <div className="flex flex-wrap text-sm md:text-base justify-between mt-4">
+                        <div className="w-1/4 m-2">
+                          React JS
+                        </div>
                         <div className="w-1/4 m-2">React Native</div>
                         <div className="w-1/4 m-2">Next JS</div>
                         <div className="w-1/4 m-2">Redux</div>
@@ -256,13 +263,15 @@ const HireMe = () => {
                         <div className="w-1/4 m-2">Nest JS</div>
                         <div className="w-1/4 m-2">Message Broker</div>
                         <div className="w-1/4 m-2">Graph QL</div>
+                        <div className="w-1/4 m-2">Docker</div>
+                        <div className="w-1/4 m-2">Blockchain</div>
                       </div>
                     </main>
                   </div>
 
                   <div className="w-full md:pl-5 mt-5">
                     <div>
-                      <span className="font-mainRegular font-bold md:text-3xl">
+                      <span className="font-mainRegular text-primary text-lg  font-bold md:text-3xl">
                         Language
                       </span>
                     </div>
@@ -276,7 +285,7 @@ const HireMe = () => {
                   </div>
                   <div className="w-full md:pl-5 mt-5">
                     <div>
-                      <span className="font-mainRegular font-bold md:text-3xl">
+                      <span className="font-mainRegular text-primary text-lg  font-bold md:text-3xl">
                         Contact
                       </span>
                     </div>

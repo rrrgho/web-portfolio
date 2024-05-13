@@ -21,7 +21,11 @@ const NavbarMobile = () => {
       <nav>
         <Card className="">
           <CardContent className="p-2">
-            <div className={`flex flex-row p-3 justify-space-between ${pathname === '/' && "bg-amber-100"}`}>
+            <div
+              className={`flex flex-row p-3 justify-space-between ${
+                pathname === "/" && "bg-amber-100"
+              }`}
+            >
               <div className="w-1/2">
                 <Link href="/" legacyBehavior passHref>
                   <div className="flex flex-col">
@@ -31,7 +35,11 @@ const NavbarMobile = () => {
                 </Link>
               </div>
             </div>
-            <div className={`flex flex-row p-3 justify-space-between ${pathname === '/blog' && "bg-amber-100"}`}>
+            <div
+              className={`flex flex-row p-3 justify-space-between ${
+                pathname === "/blog" && "bg-amber-100"
+              }`}
+            >
               <div className="w-full">
                 <Link href="/blog" legacyBehavior passHref>
                   <div className="flex flex-col">
@@ -43,7 +51,11 @@ const NavbarMobile = () => {
                 </Link>
               </div>
             </div>
-            <div className={`flex flex-row p-3 justify-space-between ${splitedPathname[1] === "showcase" && "bg-amber-100"}`}>
+            <div
+              className={`flex flex-row p-3 justify-space-between ${
+                splitedPathname[1] === "showcase" && "bg-amber-100"
+              }`}
+            >
               <div className="w-1/2">
                 <span>
                   <div className="flex flex-col">
@@ -82,7 +94,11 @@ const NavbarMobile = () => {
                       </Link>
                     </div>
                     <div className="w-full mt-3">
-                      <Link href="/showcase/my-achievement" legacyBehavior passHref>
+                      <Link
+                        href="/showcase/my-achievement"
+                        legacyBehavior
+                        passHref
+                      >
                         <div className="flex flex-col">
                           <span className="text-sm font-bold p-0">
                             My Achievements
@@ -108,7 +124,7 @@ const NavbarMobile = () => {
 
             <div className="flex mt-6 flex-row p-3 justify-space-between">
               <div className="w-full">
-                <Link href="/" legacyBehavior passHref>
+                <a href="https://saweria.co/igho" target="_blank">
                   <div className="flex flex-col">
                     <div className="flex">
                       <FontAwesomeIcon
@@ -124,7 +140,7 @@ const NavbarMobile = () => {
                       Just if what I share inspire you
                     </span>
                   </div>
-                </Link>
+                </a>
               </div>
             </div>
             <div className="flex mt-10 justify-center text-center item-center content-center">

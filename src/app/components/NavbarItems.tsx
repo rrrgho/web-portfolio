@@ -92,7 +92,12 @@ const NavbarItems: React.FC = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="pl-6">
-          <Link href="/docs" legacyBehavior passHref>
+          <Link
+            href="https://saweria.co/igho"
+            target="_blank"
+            legacyBehavior
+            passHref
+          >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <FontAwesomeIcon
                 icon={faMugHot}
