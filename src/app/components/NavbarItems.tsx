@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
-import { faMugHot } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faMugHot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { usePathname } from "next/navigation";
@@ -45,7 +45,7 @@ const NavbarItems: React.FC = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
               className={
@@ -90,21 +90,24 @@ const NavbarItems: React.FC = () => {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem className="pl-6">
           <Link
-            href="https://saweria.co/igho"
+            href="https://riangho.com"
             target="_blank"
             legacyBehavior
             passHref
           >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <FontAwesomeIcon
-                icon={faMugHot}
+                icon={faArrowLeft}
                 className="mr-2 mt-[-9px] text-primary"
                 size="2x"
               />
-              Buy Me a Coffee
+              <span className="mt-[-10px] font-bold ms-2 text-primary">
+                Back Bro, too bright here ! I don't have time even just to
+                change the Color Theme.
+              </span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
