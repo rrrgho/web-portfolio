@@ -58,7 +58,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        overflow: auto;
+        overflow: hidden;
         background-color: rgba(0, 0, 0, 0.8);
         display: none;
         align-items: center;
@@ -71,10 +71,14 @@
         padding: 20px;
         text-align: center;
         color: white;
-        max-width: calc(100vw - 40px); /* Responsive max-width */
+        width: 90vw; /* Set max-width to 90% of viewport width */
+        height: 90vh; /* Set max-height to 90% of viewport height */
         position: relative;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .close-button {
@@ -95,6 +99,53 @@
 
       .copy-icon:hover {
         color: #ffffff;
+      }
+
+      .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left: 4px solid #ffffff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+          color: orange;
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .bounce {
+        animation: bounce 1s infinite;
+      }
+
+      .spinner-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
       }
     </style>
   </head>
@@ -137,15 +188,17 @@
                 </span>
                 <!-- Hire Me Button -->
                 <a
-                  href="https://web.riangho.com/hire-me"
-                  class="flex items-center"
+                  href="#"
+                  onclick="showHireMePopup()"
+                  class="flex items-center bounce"
                 >
                   <i class="fas fa-briefcase mr-2"></i>
                   <span class="">Hire</span>
                 </a>
                 <!-- Portfolio Button -->
                 <a
-                  href="https://web.riangho.com/showcase/my-work"
+                  href="#"
+                  onclick="showPortfolioPopup()"
                   class="flex items-center"
                 >
                   <i class="fas fa-folder-open mr-2"></i>
@@ -190,12 +243,12 @@
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal for Crypto Addresses -->
     <div id="cryptoModal" class="modal flex">
       <div id="cryptoModalContent" class="modal-content">
         <span class="close-button" onclick="closePopup()">&times;</span>
-        <div id="cryptoIcon" class="text-4xl mb-3"></div>
-        <h2 class="text-xl font-semibold mb-2">Do you like my work?</h2>
+        <div id="cryptoIcon" class="mb-3"></div>
+        <h2 class="text-xl font-semibold mb-2">Cryptocurrency Address</h2>
         <div class="flex justify-center items-center mt-2">
           <input
             type="text"
@@ -208,59 +261,113 @@
       </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Modal for Hire Me -->
+    <div id="hireMeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeHireMePopup()">&times;</span>
+        <div class="spinner-container" id="hireMeSpinner">
+          <div class="spinner"></div>
+        </div>
+        <iframe
+          id="hireMeIframe"
+          src=""
+          class="w-full h-full"
+          onload="document.getElementById('hireMeSpinner').style.display = 'none'"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Modal for Portfolio -->
+    <div id="portfolioModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closePortfolioPopup()"
+          >&times;</span
+        >
+        <div class="spinner-container" id="portfolioSpinner">
+          <div class="spinner"></div>
+        </div>
+        <iframe
+          id="portfolioIframe"
+          src=""
+          class="w-full h-full"
+          onload="document.getElementById('portfolioSpinner').style.display = 'none'"
+        ></iframe>
+      </div>
+    </div>
+
     <script>
-      function showPopup(type) {
+      function showPopup(crypto) {
         const modal = document.getElementById("cryptoModal");
         const modalContent = document.getElementById("cryptoModalContent");
-        const icon = document.getElementById("cryptoIcon");
+        const iconContainer = document.getElementById("cryptoIcon");
         const addressInput = document.getElementById("cryptoAddress");
 
+        let iconSrc = "";
         let address = "";
-        let iconHTML = "";
 
-        switch (type) {
+        switch (crypto) {
           case "bitcoin":
+            iconSrc = "bitcoin.png";
             address = "bc1qvd6nm5mzj96t4xuuphtw83a3gzl4e0dcehp29e";
-            iconHTML = '<img src="bitcoin.png" alt="Bitcoin" class="w-8 h-8">';
             break;
           case "ethereum":
+            iconSrc = "etherium.png";
             address = "0x9cC323A7A2bD78CE0bA02D668C1d6968529a3582";
-            iconHTML =
-              '<img src="etherium.png" alt="Ethereum" class="w-8 h-8">';
             break;
           case "solana":
+            iconSrc = "solana.webp";
             address = "DQQdErUqqwUsfvTzXyfq9NzkbBeYSc3dPMBvNN8NEwVT";
-            iconHTML = '<img src="solana.webp" alt="Solana" class="w-8 h-8">';
+            break;
+          default:
             break;
         }
 
-        icon.innerHTML = iconHTML;
+        iconContainer.innerHTML = `<img src="${iconSrc}" alt="${crypto}" class="w-16 h-16" />`;
         addressInput.value = address;
-        modalContent.style.width = `${addressInput.value.length + 5}ch`; // Adjust modal width based on address length
-
         modal.style.display = "flex";
       }
 
       function closePopup() {
-        const modal = document.getElementById("cryptoModal");
-        modal.style.display = "none";
+        document.getElementById("cryptoModal").style.display = "none";
       }
 
       function copyAddress() {
         const addressInput = document.getElementById("cryptoAddress");
         addressInput.select();
-        addressInput.setSelectionRange(0, 99999); // For mobile devices
         document.execCommand("copy");
       }
 
+      function showHireMePopup() {
+        const modal = document.getElementById("hireMeModal");
+        const iframe = document.getElementById("hireMeIframe");
+        iframe.src = "https://web.riangho.com/hire-me"; // Link to the "Hire Me" page
+        document.getElementById("hireMeSpinner").style.display = "block"; // Show spinner
+        modal.style.display = "flex";
+      }
+
+      function closeHireMePopup() {
+        document.getElementById("hireMeModal").style.display = "none";
+      }
+
+      function showPortfolioPopup() {
+        const modal = document.getElementById("portfolioModal");
+        const iframe = document.getElementById("portfolioIframe");
+        iframe.src = "https://web.riangho.com/showcase/my-work"; // Link to the "Portfolio" page
+        document.getElementById("portfolioSpinner").style.display = "block"; // Show spinner
+        modal.style.display = "flex";
+      }
+
+      function closePortfolioPopup() {
+        document.getElementById("portfolioModal").style.display = "none";
+      }
+
       function like() {
-        const likeCount = document.getElementById("likeCount");
         const likeIcon = document.getElementById("likeIcon");
-        let count = parseInt(likeCount.innerText, 10);
-        count++;
-        likeCount.innerText = count;
-        likeIcon.classList.toggle("text-red-500"); // Toggle heart color
+        const likeCount = document.getElementById("likeCount");
+        likeIcon.classList.toggle("text-red-500");
+        likeCount.textContent =
+          parseInt(likeCount.textContent) +
+          (likeIcon.classList.contains("text-red-500") ? 1 : -1);
       }
     </script>
   </body>
